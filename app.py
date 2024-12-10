@@ -137,4 +137,4 @@ def second_level_auth():
     return render_template('second_level_auth.html')
 
 if __name__ == '__main__':
-  app.run(debug=True, host='0.0.0.0')
+  app.run()
