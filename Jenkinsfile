@@ -1,8 +1,6 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = "app:v1"
-        USERNAME = "chedi1"
         EMAIL_ADDRESS = "chadighribi2@gmail.com"
     }
     stages {
@@ -29,7 +27,7 @@ pipeline {
         stage('Deploy Application to azure app service') {
             steps {
                 script {
-                    sh 'az webapp deployment source config --name flask-app-chedi --resource-group flask-app-rg --repo-url https://github.com/chedicoder/Terraform-Repo.git --branch main --manual-integration'
+                    sh 'az webapp deployment source config --name flask-app-chedi --resource-group flask-app-rg --repo-url https://github.com/chedicoder/app-service.git --branch main --manual-integration'
                 }
             }
         }
